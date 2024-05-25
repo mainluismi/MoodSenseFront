@@ -1,15 +1,23 @@
 body {
-    padding: 5%;
-    background-color: rgb(218, 218, 218);
+    padding: 3%;
+    background-color: rgb(255, 255, 255);
 }
 
-.contenedor-tabla {
-    margin: 0 auto;
-    padding: 30px;
-    border: 1px solid #ffffff;
-    border-radius: 10px;
-    background-color: rgb(244, 243, 243);
-    border-radius: 20px;
-    border-color: rgb(3, 3, 3);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Ajusta según sea necesario */
-}
+  
+  .tab-content {
+    margin-top: 20px;
+  }
+  
+  .btn-link {
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .btn-link:hover {
+    text-decoration: underline;
+  }
+
+  .component-class {
+    background-color: inherit; /* Otras propiedades de estilo pueden ir aquí */
+    color: inherit; /* Asegúrate de usar inherit para que tome los estilos globales */
+  }

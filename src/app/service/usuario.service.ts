@@ -12,11 +12,15 @@ export class UsuarioService {
   constructor(private http: HttpClient) {}
 
   registrarUsuario(usuario: Usuario): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/usuarios`, usuario);
+    return this.http.post<any>(`${this.apiUrl}/guardarUsuario`, usuario);
+  }
+
+  verificarCodigo(email: string, codigo: string): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/verificarCodigo`, { email, codigo });
   }
 
   confirmarCorreo(usuario: Usuario): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/confirmarCorreo`, usuario);
+    return this.http.post<any>(`${this.apiUrl}/verificarCodigo`, usuario);
   }
 
   iniciarSesion(email: string, password: string): Observable<Usuario> {
@@ -30,4 +34,13 @@ export class UsuarioService {
   obtenerUsuarios(): Observable<Usuario[]> {
     return this.http.get<Usuario[]>(`${this.apiUrl}/usuarios`); // Ajusta la URL según tu endpoint en el backend
   }
+
+  guardarUsuario(usuario: Usuario): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/guardarUsuario`, usuario);
+  }
+
+  generateForm(questions: string[]): Observable<string> {
+    return this.http.post<string>('/api/generate-form', questions);
+  }
+
 }

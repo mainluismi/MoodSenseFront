@@ -1,0 +1,10 @@
+.container-sm{
+    margin-top: 10px;
+    background-color: red;
+}
+
+.carousel {
+    width: 500px; /* Ancho deseado */
+    height: 500px; /* Alto deseado */
+    margin: 0 auto; /* Establece márgenes superior e inferior a 0 y margen lateral automático */
+}

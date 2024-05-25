@@ -25,11 +25,13 @@ export class HomeComponent {
     this.subscription = this.usuarioService.iniciarSesion(this.email, this.password)
       .subscribe({
         next: (response: any) => {
-          // Manejar la respuesta del backend
-          console.log('Inicio de sesión exitoso:', response);
-          // Redirigir al usuario a la página deseada, por ejemplo, '/inicioSesion'
-          this.router.navigate(['/inicioSesion']);
-        },
+          if (response.isAdmin === true) {
+              this.router.navigate(['/admin-panel']);
+          } else {
+              this.router.navigate(['/inicio-sesion']);
+          }
+      }
+      ,
         error: (error: any) => {
           // Manejar el error de inicio de sesión
           console.error('Error al iniciar sesión:', error);

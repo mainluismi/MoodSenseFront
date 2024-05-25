@@ -1,1 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+  }
+  
+  /* Estilos específicos para los componentes en modo oscuro */
+  body.dark-mode .contenedor-tabla {
+    background-color: #1e1e1e;
+    color: white;
+  }
+  
+  body.dark-mode .navbar-light.bg-light {
+    background-color: #333 !important;
+  }
+  
+  body.dark-mode .form-control {
+    background-color: #333;
+    color: white;
+  }
+  
+  body.dark-mode .btn-primary {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+
+  body.dark-mode .titulo-home, label{
+    color: black;
+  }
+
+  body.dark-mode .formulario{
+    background-color: rgb(63, 63, 63);
+  }

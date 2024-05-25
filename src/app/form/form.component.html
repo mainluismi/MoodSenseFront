@@ -1,0 +1,8 @@
+<div>
+    <input type="text" [(ngModel)]="questions" placeholder="Escribe tu pregunta">
+    <button (click)="addQuestion(question)">Agregar pregunta</button>
+  </div>
+  <div *ngFor="let q of questions">{{ q }}</div>
+  <button (click)="generateForm()">Generar Formulario</button>
+  <div [innerHTML]="generatedForm"></div>
+  

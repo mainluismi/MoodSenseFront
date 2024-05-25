@@ -1,0 +1,5 @@
+<!-- src/app/theme-toggle/theme-toggle.component.html -->
+<button (click)="toggleTheme()" class="theme-toggle-button">
+    {{ themeService.isDarkModeEnabled() ? 'Modo Claro' : 'Modo Oscuro' }}
+  </button>
+  
