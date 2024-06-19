@@ -1,12 +1,13 @@
 <div class="formulario">
-  <h1 class="titulo-home">Confirmación de Correo</h1>
+    <h1 class="titulo-home">Confirmación de Correo</h1>
 
-  <div class="form-group">
-    <label for="exampleInputPassword1">Código de Verificación</label>
-    <input type="text" class="form-control" id="exampleInputPassword1" name="codigoVerificacion" [(ngModel)]="codigoVerificacion" placeholder="Código de Verificación">
-  </div>
+    <div class="form-group">
+        <label class="labelHome" for="exampleInputPassword1">Código de Verificación</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" name="codigoVerificacion"
+            [(ngModel)]="codigoVerificacion" placeholder="Código de Verificación">
+    </div>
 
-  <span *ngIf="error" class="error-message badge bg-danger text-error">{{ error }}</span>
+    <span *ngIf="error" class="error-message badge bg-danger text-error">{{ error }}</span>
 
-  <button type="button" class="btn btn-primary" (click)="confirmarCorreo()">Confirmar Correo</button>
+    <button type="button" class="btn btn-primary" (click)="confirmarCorreo()">Confirmar Correo</button>
 </div>

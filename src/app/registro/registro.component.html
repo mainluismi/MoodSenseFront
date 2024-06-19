@@ -1,30 +1,31 @@
 <!-- registro-component.html -->
 <div class="formulario">
     <form (ngSubmit)="registrarUsuario()">
-      <h1 class="titulo-home">Registro de Usuario</h1>
-      <span *ngIf="error" class="error-message badge bg-danger text-error">Por favor, introduzca todos los datos correctamente.</span>
-      <div>
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" [(ngModel)]="nombre" required>
-      </div>
-  
-      <div>
-        <label for="apellidos">Apellidos:</label>
-        <input type="text" id="apellidos" name="apellidos" [(ngModel)]="apellidos" required>
-      </div>
-  
-      <div>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" [(ngModel)]="email" required>
-      </div>
-  
-      <div>
-        <label for="password">Contraseña:</label>
-        <input type="password" id="password" name="password" [(ngModel)]="password" required>
-      </div>
-  
-      <button type="submit" class="btn btn-primary" >Registrar Usuario</button>
-      
+        <h1 class="titulo-home">Registro de Usuario</h1>
+        <span *ngIf="error" class="error-message badge bg-danger text-error">Por favor, introduzca todos los datos
+            correctamente.</span>
+        <div>
+            <label class="labeRegister" for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre" [(ngModel)]="nombre" required>
+        </div>
+
+        <div>
+            <label class="labeRegister" for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" [(ngModel)]="apellidos" required>
+        </div>
+
+        <div>
+            <label class="labeRegister" for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Email" [(ngModel)]="email" required>
+        </div>
+
+        <div>
+            <label class="labeRegister" for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" placeholder="Contraseña" [(ngModel)]="password"
+                required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Registrar Usuario</button>
+
     </form>
-  </div>
-  
+</div>

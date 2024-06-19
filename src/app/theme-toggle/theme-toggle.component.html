@@ -1,5 +1,5 @@
-<!-- src/app/theme-toggle/theme-toggle.component.html -->
 <button (click)="toggleTheme()" class="theme-toggle-button">
-    {{ themeService.isDarkModeEnabled() ? 'Modo Claro' : 'Modo Oscuro' }}
-  </button>
-  
+  <img [src]="themeService.isDarkModeEnabled() ? '../../assets/images/sol2.png' : '../../assets/images/luna2.png'" 
+       [alt]="themeService.isDarkModeEnabled() ? 'Modo Claro' : 'Modo Oscuro'" 
+       class="theme-icon">
+</button>

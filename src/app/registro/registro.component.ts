@@ -29,7 +29,7 @@ export class RegistroComponent {
 
     if (this.nombre === '' || this.apellidos === '' || this.email === '' || this.password === '') {
       this.error = true;
-      this.registrando = false; // Restablece la bandera a false
+      this.registrando = false;
       return;
     }
 

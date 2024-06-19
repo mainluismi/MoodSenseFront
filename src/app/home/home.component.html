@@ -1,21 +1,27 @@
 <div class="formulario">
     <h1 class="titulo-home">Registro de Usuario</h1>
-    
+
     <div class="form-group">
-      <label for="exampleInputEmail1">Email</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" name="email" [(ngModel)]="email" placeholder="Email">
+        <label class="labelHome" for="exampleInputEmail1">Email</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" name="email" [(ngModel)]="email"
+            placeholder="Email">
     </div>
-    
+
     <div class="form-group">
-      <label for="exampleInputPassword1">Contraseña</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" name="password" [(ngModel)]="password" placeholder="Contraseña">
+        <label class="labelHome" for="exampleInputPassword1">Contraseña</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" name="password" [(ngModel)]="password"
+            placeholder="Contraseña">
     </div>
-    
-    <button type="button" class="btn btn-primary" (click)="iniciarSesion()">Iniciar Sesión</button>
-    <button type="button" class="btn btn-primary" (click)="crearCuenta()">Crear Cuenta</button>
+
+    <div class="options d-flex justify-content-between mt-3">
+        <button type="button" class="btn btn-primary" (click)="iniciarSesion()">Iniciar Sesión</button>
+        <button type="button" class="btn btn-primary" (click)="crearCuenta()">Crear Cuenta</button>
+        <button type="button" class="btn btn-primary"><a href="/inicio-sesion"
+                class="text-white text-decoration-none">Invitado</a></button>
+    </div>
 
     <!-- Aquí se mostrará el mensaje de error en caso de que falle el inicio de sesión -->
     <div *ngIf="errorMessage" class="alert alert-danger mt-3">
-      {{ errorMessage }}
-  </div>
+        {{ errorMessage }}
+    </div>
 </div>

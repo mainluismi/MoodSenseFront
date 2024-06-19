@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UsuarioService {
-  private apiUrl = 'http://localhost:8080'; // Ajusta la URL de acuerdo a tu backend
+  private apiUrl = 'http://localhost:8080'; 
 
   constructor(private http: HttpClient) {}
 
@@ -32,7 +32,7 @@ export class UsuarioService {
   }
 
   obtenerUsuarios(): Observable<Usuario[]> {
-    return this.http.get<Usuario[]>(`${this.apiUrl}/usuarios`); // Ajusta la URL según tu endpoint en el backend
+    return this.http.get<Usuario[]>(`${this.apiUrl}/usuarios`);
   }
 
   guardarUsuario(usuario: Usuario): Observable<any> {

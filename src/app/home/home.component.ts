@@ -47,7 +47,6 @@ export class HomeComponent {
   }
 
   ngOnDestroy() {
-    // Asegúrate de desuscribirte del observable en el ngOnDestroy para evitar posibles fugas de memoria
     if (this.subscription) {
       this.subscription.unsubscribe();
     }

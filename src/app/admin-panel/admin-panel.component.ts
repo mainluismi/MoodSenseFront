@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { UsuarioService } from '../service/usuario.service';
+import { DetectionService } from '../service/detection.service';
 
 @Component({
   selector: 'app-admin-panel',
@@ -12,6 +13,8 @@ export class AdminComponent implements OnInit {
   listaUsuarios: any[] = [];
   descripcion: string = 'Contiene el formulario o la interfaz para agregar nuevas ofertas de trabajo. Los administradores pueden utilizar este formulario para ingresar detalles sobre nuevas oportunidades laborales que serán visualizadas por futuros trabajadores.';
   activeTab: string = 'addWorker';
+  searchResults: any[] = [];
+  searchQuery: string = '';
 
   workerData = {
     name: '',
@@ -22,7 +25,26 @@ export class AdminComponent implements OnInit {
     image: null
   };
 
-  constructor(private usuarioService: UsuarioService, private router: Router, private http: HttpClient) { }
+  constructor(private usuarioService: UsuarioService, private router: Router, private http: HttpClient, private detectionService: DetectionService) { }
+
+  showTabContent(tabName: string) {
+    this.activeTab = tabName;
+    switch (tabName) {
+      case 'addWorker':
+        this.activeTab = 'addWorker';
+        break;
+      case 'searchWorker':
+        this.activeTab = 'searchWorker';
+        break;
+      case 'editWorker':
+        this.activeTab = 'editWorker';
+        break;
+      case 'deleteWorker':
+        this.activeTab = 'deleteWorker';
+        break;
+    }
+    console.log(this.activeTab)
+  }
 
   ngOnInit(): void {
     this.obtenerListaUsuarios();
@@ -50,29 +72,7 @@ export class AdminComponent implements OnInit {
     });
   }
 
-  showTabContent(tabName: string) {
-    this.activeTab = tabName;
-    switch (tabName) {
-      case 'addWorker':
-        this.descripcion = 'Formulario para agregar nuevos trabajadores.';
-        this.activeTab = 'addWorker';
-        break;
-      case 'searchWorker':
-        this.descripcion = 'Formulario para buscar trabajadores.';
-        this.activeTab = 'searchWorker';
-        break;
-      case 'editWorker':
-        this.descripcion = 'Formulario para editar los datos de un trabajador existente.';
-        this.activeTab = 'editWorker';
-        break;
-      case 'deleteWorker':
-        this.descripcion = 'Formulario para eliminar trabajadores.';
-        this.activeTab = 'deleteWorker';
-        break;
-      default:
-        this.descripcion = 'Seleccione una opción para ver más detalles.';
-    }
-  }
+
 
   onSubmit() {
     const formData = new FormData();
@@ -101,5 +101,16 @@ export class AdminComponent implements OnInit {
     if (event.target.files.length > 0) {
       this.workerData.image = event.target.files[0];
     }
+  }
+
+  onSearchSubmit() {
+    if (this.searchQuery.trim() === '') return;
+
+    this.detectionService.getDetectionsByEmployeeName(this.searchQuery)
+      .subscribe(data => {
+        this.searchResults = data;
+      }, error => {
+        console.error('Error fetching detection data:', error);
+      });
   }
 }

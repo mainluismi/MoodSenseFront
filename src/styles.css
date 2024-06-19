@@ -1,8 +1,8 @@
 body.dark-mode {
-    background-color: #121212;
+    background-color: #00255D;
     color: white;
   }
-  
+
   /* Estilos específicos para los componentes en modo oscuro */
   body.dark-mode .contenedor-tabla {
     background-color: #1e1e1e;
@@ -14,19 +14,39 @@ body.dark-mode {
   }
   
   body.dark-mode .form-control {
-    background-color: #333;
-    color: white;
+    color: black;
   }
   
-  body.dark-mode .btn-primary {
-    background-color: #0056b3;
-    border-color: #0056b3;
-  }
+  
 
   body.dark-mode .titulo-home, label{
     color: black;
   }
 
   body.dark-mode .formulario{
-    background-color: rgb(63, 63, 63);
+    background-color: rgb(255, 255, 255);
   }
+
+  .dark-mode .cuerpo-contenedor{
+    background-color: #00255D;
+  }
+
+  .btn-primary{
+    background-color: #00255D;
+  }
+
+  .theme-toggle-button{
+    background-color: #00255D;
+  }
+
+body.dark-mode label{
+  color: white;
+}
+
+.dark-mode .labelHome{
+  color: black;
+}
+
+.dark-mode .labeRegister{
+  color: black;
+}
