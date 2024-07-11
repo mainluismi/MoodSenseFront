@@ -21,7 +21,6 @@ export class RegistroComponent {
 
   registrarUsuario() {
     if (this.registrando) {
-      // Evita hacer múltiples solicitudes si ya se está registrando
       return;
     }
 

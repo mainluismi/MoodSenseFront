@@ -21,7 +21,6 @@ export class HomeComponent {
   }
 
   iniciarSesion() {
-    // Enviar la solicitud HTTP POST al backend con el email y la contraseña
     this.subscription = this.usuarioService.iniciarSesion(this.email, this.password)
       .subscribe({
         next: (response: any) => {
@@ -33,16 +32,13 @@ export class HomeComponent {
       }
       ,
         error: (error: any) => {
-          // Manejar el error de inicio de sesión
           console.error('Error al iniciar sesión:', error);
-          // Mostrar el mensaje de error recibido del backend
           this.errorMessage = 'Error al iniciar sesión. Por favor, inténtelo de nuevo.';
         }
       });
   }
   
   crearCuenta() {
-    // Redirigir al usuario a la página de registro, por ejemplo, '/registro'
     this.router.navigate(['/registro']);
   }
 

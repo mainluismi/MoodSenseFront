@@ -8,7 +8,7 @@ import { UsuarioService } from '../service/usuario.service';
 })
 export class FormComponent {
   questions: string[];
-  generatedForm!: string; // Agregar el operador de aserción de no nulo
+  generatedForm!: string;
   question!: string;
 
   constructor(private usuarioService: UsuarioService) {
